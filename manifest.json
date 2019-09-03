@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Tax Included Price",
+  "version": "1.0",
+  "description": "Show the sales tax included price of an item.",
+  "icons": {
+    "128": "/images/sample.png",
+    "48": "/images/sample.png",
+    "16": "/images/sample.png"
+  },
+  "page_action": {
+    "default_icon": "/images/sample.png",
+    "default_popup": "popup.html",
+    "default_title": "Tax Included Price"
+  },
+
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.ca/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+
+  "permissions": ["https://www.amazon.ca/*"],
+
+  "web_accessible_resources": []
+}
